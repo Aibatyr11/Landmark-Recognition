@@ -1,23 +1,28 @@
 import React, { useState } from "react";
 import axios from "axios";
+import "./UploadImage.css";
 
 const API_URL = "http://127.0.0.1:8000/predict";
 
 const UploadImage: React.FC = () => {
   const [file, setFile] = useState<File | null>(null);
-  const [result, setResult] = useState<string>("");
   const [preview, setPreview] = useState<string>("");
+  const [result, setResult] = useState<string>("");
+  const [loading, setLoading] = useState<boolean>(false);
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const selected = e.target.files?.[0];
     if (selected) {
       setFile(selected);
       setPreview(URL.createObjectURL(selected));
+      setResult("");
     }
   };
 
   const handleUpload = async () => {
     if (!file) return;
+    setLoading(true);
+
     const formData = new FormData();
     formData.append("file", file);
 
@@ -26,30 +31,37 @@ const UploadImage: React.FC = () => {
         headers: { "Content-Type": "multipart/form-data" },
       });
       const { landmark_name, landmark_id } = response.data;
-      setResult(`🏷 ${landmark_name} (ID: ${landmark_id})`);
+      setResult(`${landmark_name} `);
     } catch (error) {
       console.error("Ошибка при отправке:", error);
       setResult("❌ Ошибка при распознавании");
+    } finally {
+      setLoading(false);
     }
   };
 
   return (
-    <div className="p-6 bg-white rounded-xl shadow-lg w-[400px] flex flex-col items-center">
-      <input type="file" accept="image/*" onChange={handleFileChange} />
+    <div className="upload-card">
+      <label className="file-input">
+        <input type="file" accept="image/*" onChange={handleFileChange} />
+        {!file && <span>📸 Нажми, чтобы выбрать фото</span>}
+      </label>
+
       {preview && (
-        <img
-          src={preview}
-          alt="preview"
-          className="mt-4 w-64 h-64 object-cover rounded-lg shadow"
-        />
+        <div className="image-preview">
+          <img src={preview} alt="preview" />
+        </div>
       )}
+
       <button
+        className={`upload-button ${loading ? "loading" : ""}`}
         onClick={handleUpload}
-        className="mt-4 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+        disabled={!file || loading}
       >
-        Распознать
+        {loading ? "🔄 Распознаю..." : "✨ Распознать"}
       </button>
-      {result && <p className="mt-4 text-lg font-medium text-center">{result}</p>}
+
+      {result && <p className="result-text">{result}</p>}
     </div>
   );
 };
