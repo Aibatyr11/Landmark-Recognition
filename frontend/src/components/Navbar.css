@@ -1,0 +1,52 @@
+/* Navbar.css */
+
+/* Общий стиль навбара */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 36rem; /* как у карточки */
+  padding: 0.75rem 1.5rem;
+  background: rgba(25, 25, 35, 0.85);
+  border: 1px solid rgba(91, 115, 255, 0.15);
+  border-radius: 1.5rem;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+  margin-bottom: 2rem;
+  transition: 0.3s;
+}
+
+.navbar h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #e0e6ff;
+  text-shadow: 0 0 8px rgba(91, 115, 255, 0.3);
+}
+
+.navbar .nav-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.navbar .nav-buttons button {
+  background: transparent;
+  border: none;
+  color: #cfd2ff;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0.4rem 0.8rem;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+
+.navbar .nav-buttons button:hover {
+  color: #ffffff;
+  background: rgba(91, 115, 255, 0.2);
+}
+
+.navbar .nav-buttons .active {
+  color: #ffffff;
+  font-weight: 700;
+  text-shadow: 0 0 6px rgba(91, 115, 255, 0.5);
+}
