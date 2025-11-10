@@ -1,4 +1,4 @@
-# 🏰 Landmark Recognition Project
+# 🏰 Landmark Recognition
 
 ## 🌍 Описание проекта
 
