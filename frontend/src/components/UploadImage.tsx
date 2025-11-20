@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import { useState } from "react";
+
 import axios from "axios";
 import "./UploadImage.css";
 
-const API_URL = "http://127.0.0.1:8000/predict";
+const API_URL = "http://localhost:8000/predict";
 
 const UploadImage: React.FC = () => {
   const [file, setFile] = useState<File | null>(null);
@@ -30,7 +31,7 @@ const UploadImage: React.FC = () => {
       const response = await axios.post(API_URL, formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
-      const { landmark_name, landmark_id } = response.data;
+      const { landmark_name } = response.data;
       setResult(`${landmark_name} `);
     } catch (error) {
       console.error("Ошибка при отправке:", error);

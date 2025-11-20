@@ -1,0 +1,85 @@
+# -----------------------------
+# Python / FastAPI
+# -----------------------------
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.db
+*.sqlite3
+.env
+.env.*
+*.env
+venv/
+.venv/
+.env.local
+
+# FastAPI build artifacts
+*.log
+*.pid
+
+# -----------------------------
+# React / Node.js
+# -----------------------------
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+dist/
+build/
+.cache/
+.eslintcache
+
+# environment
+*.local
+
+# -----------------------------
+# Docker
+# -----------------------------
+# ignore docker volumes, not actual Dockerfiles
+**/docker-data/
+**/docker-volume/
+**/data/
+**/tmp/
+
+# do NOT ignore Dockerfile and docker-compose.yml
+
+# -----------------------------
+# System files
+# -----------------------------
+.DS_Store
+Thumbs.db
+
+# -----------------------------
+# IDE / Editor settings
+# -----------------------------
+# VSCode
+.vscode/
+.vscode/*
+
+# PyCharm / JetBrains
+.idea/
+
+# -----------------------------
+# WSL / Windows unwanted files
+# -----------------------------
+*.bak
+*.swp
+*.tmp
+
+# -----------------------------
+# ML model (large files)
+# -----------------------------
+*.h5
+*.pt
+*.pth
+*.onnx
+*.joblib
+*.pickle
+*.pkl
+
+# Allow small models
+!models/*.pkl
+!models/*.joblib
+

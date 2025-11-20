@@ -4,9 +4,10 @@ import "./Navbar.css";
 interface NavbarProps {
   currentPage: string;
   setPage: (page: string) => void;
+  isLoggedIn: boolean;
 }
 
-const Navbar: React.FC<NavbarProps> = ({ currentPage, setPage }) => {
+const Navbar: React.FC<NavbarProps> = ({ currentPage, setPage, isLoggedIn }) => {
   return (
     <nav className="navbar">
       <h2>🏰 Landmark AI</h2>
@@ -17,18 +18,32 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, setPage }) => {
         >
           Распознавание
         </button>
-        <button
-          onClick={() => setPage("login")}
-          className={currentPage === "login" ? "active" : ""}
-        >
-          Вход
-        </button>
-        <button
-          onClick={() => setPage("register")}
-          className={currentPage === "register" ? "active" : ""}
-        >
-          Регистрация
-        </button>
+
+        {!isLoggedIn && (
+          <>
+            <button
+              onClick={() => setPage("login")}
+              className={currentPage === "login" ? "active" : ""}
+            >
+              Вход
+            </button>
+            <button
+              onClick={() => setPage("register")}
+              className={currentPage === "register" ? "active" : ""}
+            >
+              Регистрация
+            </button>
+          </>
+        )}
+
+        {isLoggedIn && (
+          <button
+            onClick={() => setPage("profile")}
+            className={currentPage === "profile" ? "active" : ""}
+          >
+            Профиль
+          </button>
+        )}
       </div>
     </nav>
   );

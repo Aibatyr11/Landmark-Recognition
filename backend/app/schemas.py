@@ -1,6 +1,16 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, EmailStr
+from typing import Optional
 
-class PredictionResponse(BaseModel):
-    filename: str
-    landmark_name: str
-    landmark_id: int
+class UserCreate(BaseModel):
+    username: str
+    email: EmailStr
+    password: str
+
+class UserLogin(BaseModel):
+    email: EmailStr
+    password: str
+
+class UserResponse(BaseModel):
+    id: str
+    username: str
+    email: EmailStr

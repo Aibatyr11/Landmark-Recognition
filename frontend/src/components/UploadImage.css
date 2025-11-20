@@ -2,7 +2,7 @@
   background: rgba(255, 255, 255, 0.8);
   border: 2px solid rgba(220, 230, 255, 0.7);
   border-radius: 20px;
-  padding: 2rem;
+  padding: 100px;
   width: 340px;
   display: flex;
   flex-direction: column;
@@ -10,6 +10,7 @@
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
   backdrop-filter: blur(12px);
   transition: 0.3s ease;
+  height: 400px;
 }
 
 .upload-card:hover {

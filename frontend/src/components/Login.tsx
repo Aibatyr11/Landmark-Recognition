@@ -1,9 +1,38 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./Login.css";
 
-const Login: React.FC = () => {
+interface LoginProps {
+  setPage: (page: string) => void;
+  setIsLoggedIn: (value: boolean) => void;
+}
+
+const Login: React.FC<LoginProps> = ({ setPage, setIsLoggedIn }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+
+  const handleLogin = async () => {
+    setError("");
+    try {
+      const response = await fetch("http://127.0.0.1:8000/auth/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password }),
+      });
+
+      if (!response.ok) {
+        const data = await response.json();
+        throw new Error(data.detail || "Login failed");
+      }
+
+      const data = await response.json();
+      localStorage.setItem("access_token", data.access_token);
+      setIsLoggedIn(true); // ✅ обновляем состояние
+      setPage("recognition"); // ✅ переход после входа
+    } catch (err: any) {
+      setError(err.message);
+    }
+  };
 
   return (
     <div className="login-page">
@@ -24,7 +53,9 @@ const Login: React.FC = () => {
           onChange={(e) => setPassword(e.target.value)}
         />
 
-        <button>🔐 Войти</button>
+        <button onClick={handleLogin}>🔐 Войти</button>
+
+        {error && <p className="error">{error}</p>}
       </div>
     </div>
   );

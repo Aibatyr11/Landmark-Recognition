@@ -5,9 +5,9 @@ import pandas as pd
 import os
 
 # --- Пути ---
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # backend/
-MODEL_PATH = os.path.join(BASE_DIR, "landmark_model.pth")   # ✅ твой файл
-META_PATH = os.path.join(BASE_DIR, "landmark_model.csv")    # ✅ твой CSV
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+MODEL_PATH = os.path.join(BASE_DIR, "landmark_model.pth")
+META_PATH = os.path.join(BASE_DIR, "landmark_model.csv")
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
@@ -22,7 +22,7 @@ id2name = {i: name for i, name in enumerate(class_names)}
 
 print(f"✅ Загружено {num_classes} классов из CSV")
 
-# --- Модель ---
+
 model = models.resnet18(weights=None)
 model.fc = torch.nn.Linear(model.fc.in_features, num_classes)
 model.load_state_dict(torch.load(MODEL_PATH, map_location=device))

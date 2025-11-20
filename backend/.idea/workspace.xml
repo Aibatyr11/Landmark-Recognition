@@ -6,12 +6,21 @@
   <component name="ChangeListManager">
     <list default="true" id="89dd00bd-2a76-43ec-837a-df20a8c43277" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/auth_routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/auth_routes.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/database.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/database.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/ml_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/ml_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/schemas.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/schemas.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/components/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/Login.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/components/Navbar.css" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/Navbar.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/components/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/Navbar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/components/Register.css" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/Register.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/components/Register.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/Register.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/components/UploadImage.css" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/UploadImage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/components/UploadImage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/UploadImage.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +111,14 @@
       <workItem from="1762334170478" duration="3713000" />
       <workItem from="1762438345000" duration="3491000" />
       <workItem from="1762682149473" duration="3266000" />
-      <workItem from="1762685568190" duration="1737000" />
+      <workItem from="1762685568190" duration="2520000" />
+      <workItem from="1762694611381" duration="3568000" />
+      <workItem from="1762784738381" duration="3594000" />
+      <workItem from="1762942377380" duration="297000" />
+      <workItem from="1763031497913" duration="617000" />
+      <workItem from="1763485748376" duration="967000" />
+      <workItem from="1763488377350" duration="699000" />
+      <workItem from="1763542011869" duration="2100000" />
     </task>
     <servers />
   </component>

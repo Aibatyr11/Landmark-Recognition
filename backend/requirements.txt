@@ -1,0 +1,19 @@
+numpy<2.0.0
+pandas
+
+fastapi
+uvicorn
+pydantic
+python-multipart
+pillow
+motor
+email-validator
+
+sqlalchemy
+passlib[bcrypt]
+python-jose
+torch==2.1.0
+torchvision==0.16.0
+torchaudio==2.1.0
+
+-f https://download.pytorch.org/whl/cpu
