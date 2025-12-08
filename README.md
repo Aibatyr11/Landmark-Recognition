@@ -23,6 +23,7 @@
 
 ## ⚙️ Стек технологий
 
+
 ### 🧠 Machine Learning
 - **PyTorch** — обучение модели  
 - **TorchVision** — ResNet18, аугментации  
