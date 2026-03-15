@@ -1,4 +1,4 @@
-# 🏰 Landmark Recognition
+# Landmark Recognition
 ## 🌍 Описание проекта
 
 **Landmark Recognition** — это ML-проект, который определяет достопримечательность по фотографии.  
